@@ -29,22 +29,17 @@ class DemoSwitcherPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 24.w,
-                          height: 24.w,
+                          width: 48,
+                          height: 48,
                           decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [AppColors.accentBlue, Color(0xFF8B5CF6)],
-                            ),
-                            borderRadius: BorderRadius.circular(4.r),
+                            gradient: AppColors.primaryGradient,
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Center(
                             child: Text(
                               '#',
                               style: TextStyle(
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
                                 color: AppColors.primaryText,
                               ),
                             ),
@@ -57,9 +52,9 @@ class DemoSwitcherPage extends StatelessWidget {
                           child: Text(
                             'Brand Ambassador Platform',
                             style: TextStyle(
-                              fontSize: 8.sp,
+                              fontSize: 32,
                               color: AppColors.primaryText,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w600,
                             ),
                             textAlign: TextAlign.center,
                             overflow: TextOverflow.ellipsis,
@@ -68,12 +63,12 @@ class DemoSwitcherPage extends StatelessWidget {
                       ],
                     ),
                     
-                    SizedBox(height: 12.h),
+                    SizedBox(height: 16),
                     
                     Text(
                       'Choose a view to explore',
                       style: TextStyle(
-                        fontSize: 6.sp,
+                        fontSize: 20,
                         color: AppColors.secondaryText,
                       ),
                     ),
@@ -81,7 +76,7 @@ class DemoSwitcherPage extends StatelessWidget {
                 ),
               ),
               
-              SizedBox(height: 24.h),
+              SizedBox(height: 48),
               
               // Demo Options Grid
               LayoutBuilder(
@@ -89,12 +84,12 @@ class DemoSwitcherPage extends StatelessWidget {
                   final screenWidth = constraints.maxWidth;
                   final isTablet = screenWidth > 768;
                   final cardWidth = isTablet 
-                    ? (screenWidth - 72.w) / 4  // 4 columns on tablet/desktop
-                    : (screenWidth - 48.w) / 2; // 2 columns on mobile
+                    ? (screenWidth - 96) / 4  // 4 columns on tablet/desktop
+                    : (screenWidth - 64) / 2; // 2 columns on mobile
                   
                   return Wrap(
-                    spacing: 16.w,
-                    runSpacing: 16.h,
+                    spacing: 24,
+                    runSpacing: 24,
                     alignment: WrapAlignment.center,
                     children: [
                       // Brand Login Card
@@ -106,10 +101,11 @@ class DemoSwitcherPage extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [AppColors.accentBlue, Color(0xFF8B5CF6)],
+                          colors: [Color(0xFF2563EB), Color(0xFF9333EA)],
                         ),
                         icon: Icons.business,
                         onTap: () => context.go('/brand-login'),
+                        buttonColor: const Color(0xFF2563EB),
                       ),
                       
                       // Influencer Signup Card
@@ -121,10 +117,11 @@ class DemoSwitcherPage extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [Color(0xFF8B5CF6), Color(0xFFEC4899)],
+                          colors: [Color(0xFF9333EA), Color(0xFFDB2777)],
                         ),
                         icon: Icons.person,
                         onTap: () => context.go('/influencer-signup'),
+                        buttonColor: const Color(0xFF9333EA),
                       ),
                       
                       // Brand Dashboard Card
@@ -136,10 +133,11 @@ class DemoSwitcherPage extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [Color(0xFF10B981), Color(0xFF14B8A6)],
+                          colors: [Color(0xFF059669), Color(0xFF0D9488)],
                         ),
                         icon: Icons.dashboard,
                         onTap: () => context.go('/brand-dashboard'),
+                        buttonColor: const Color(0xFF059669),
                       ),
                       
                       // Super Admin Card
@@ -151,17 +149,18 @@ class DemoSwitcherPage extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [Color(0xFFF59E0B), Color(0xFFEF4444)],
+                          colors: [Color(0xFFEA580C), Color(0xFFDC2626)],
                         ),
                         icon: Icons.admin_panel_settings,
                         onTap: () => context.go('/super-admin-dashboard'),
+                        buttonColor: const Color(0xFFEA580C),
                       ),
                     ],
                   );
                 },
               ),
               
-              SizedBox(height: 24.h),
+              SizedBox(height: 48),
               
               // Feature Cards
               LayoutBuilder(
@@ -169,12 +168,12 @@ class DemoSwitcherPage extends StatelessWidget {
                   final screenWidth = constraints.maxWidth;
                   final isTablet = screenWidth > 768;
                   final cardWidth = isTablet 
-                    ? (screenWidth - 80.w) / 4  // 4 columns on tablet/desktop
-                    : (screenWidth - 48.w) / 2; // 2 columns on mobile
+                    ? (screenWidth - 96) / 4  // 4 columns on tablet/desktop
+                    : (screenWidth - 64) / 2; // 2 columns on mobile
                   
                   return Wrap(
-                    spacing: 16.w,
-                    runSpacing: 16.h,
+                    spacing: 24,
+                    runSpacing: 24,
                     alignment: WrapAlignment.center,
                     children: [
                       _buildFeatureCard(
@@ -182,35 +181,35 @@ class DemoSwitcherPage extends StatelessWidget {
                         width: cardWidth,
                         emoji: '🎥',
                         title: 'CMO Video Welcome',
-                        color: AppColors.accentBlue,
+                        color: const Color(0xFF60A5FA),
                       ),
                       _buildFeatureCard(
                         context: context,
                         width: cardWidth,
                         emoji: '💬',
                         title: 'Agora Chat & DMs',
-                        color: Color(0xFF8B5CF6),
+                        color: const Color(0xFFA78BFA),
                       ),
                       _buildFeatureCard(
                         context: context,
                         width: cardWidth,
                         emoji: '📊',
                         title: 'Post Affiliate Pro',
-                        color: Color(0xFF10B981),
+                        color: const Color(0xFF34D399),
                       ),
                       _buildFeatureCard(
                         context: context,
                         width: cardWidth,
                         emoji: '🎨',
                         title: 'Whiteboard Collab',
-                        color: Color(0xFFF59E0B),
+                        color: const Color(0xFFFB923C),
                       ),
                     ],
                   );
                 },
               ),
               
-              SizedBox(height: 40.h),
+              SizedBox(height: 64),
             ],
           ),
         ),
@@ -226,6 +225,7 @@ class DemoSwitcherPage extends StatelessWidget {
     required LinearGradient gradient,
     required IconData icon,
     required VoidCallback onTap,
+    required Color buttonColor,
   }) {
     return Container(
       width: width,
@@ -238,44 +238,44 @@ class DemoSwitcherPage extends StatelessWidget {
             // Gradient Icon Container
             Container(
               width: double.infinity,
-              height: 40.h,
+              height: 120,
               decoration: BoxDecoration(
                 gradient: gradient,
-                borderRadius: BorderRadius.circular(4.r),
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
                 child: Icon(
                   icon,
-                  size: 20.w,
+                  size: 64,
                   color: AppColors.primaryText,
                 ),
               ),
             ),
             
-            SizedBox(height: 12.h),
+            SizedBox(height: 32),
             
             // Title
             Text(
               title,
               style: TextStyle(
-                fontSize: 8.sp,
+                fontSize: 24,
                 color: AppColors.primaryText,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
               ),
             ),
             
-            SizedBox(height: 6.h),
+            SizedBox(height: 24),
             
             // Description
             Text(
               description,
               style: TextStyle(
-                fontSize: 6.sp,
+                fontSize: 16,
                 color: AppColors.secondaryText,
               ),
             ),
             
-            SizedBox(height: 12.h),
+            SizedBox(height: 24),
             
             // Button
             SizedBox(
@@ -285,6 +285,8 @@ class DemoSwitcherPage extends StatelessWidget {
                 onPressed: onTap,
                 variant: ButtonVariant.primary,
                 isFullWidth: true,
+                backgroundColor: buttonColor,
+                textColor: AppColors.primaryText,
               ),
             ),
           ],
@@ -304,18 +306,19 @@ class DemoSwitcherPage extends StatelessWidget {
       width: width,
       child: CustomCard(
         child: Padding(
-          padding: EdgeInsets.all(16.w),
+          padding: EdgeInsets.all(12),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 emoji,
-                style: TextStyle(fontSize: 8.sp),
+                style: TextStyle(fontSize: 20),
               ),
-              SizedBox(height: 8.h),
+              SizedBox(height: 2),
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 6.sp,
+                  fontSize: 12,
                   color: AppColors.secondaryText,
                 ),
                 textAlign: TextAlign.center,

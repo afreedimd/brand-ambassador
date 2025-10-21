@@ -34,7 +34,8 @@ class LoadingWidget extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               message!,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              style: TextStyle(
+                fontSize: 24,
                 color: AppColors.secondaryText,
               ),
               textAlign: TextAlign.center,

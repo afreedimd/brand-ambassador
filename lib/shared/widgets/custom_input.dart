@@ -68,9 +68,13 @@ class _CustomInputState extends State<CustomInput> {
         if (widget.label != null) ...[
           Text(
             widget.label!,
-            style: Theme.of(context).textTheme.labelLarge,
+            style: TextStyle(
+              fontSize: 14,
+              color: AppColors.primaryText,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 8),
         ],
         TextFormField(
           controller: widget.controller,
@@ -87,7 +91,10 @@ class _CustomInputState extends State<CustomInput> {
           validator: widget.validator,
           focusNode: widget.focusNode,
           textCapitalization: widget.textCapitalization,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: TextStyle(
+            fontSize: 14,
+            color: AppColors.primaryText,
+          ),
           decoration: InputDecoration(
             hintText: widget.hint,
             errorText: widget.errorText,
@@ -96,34 +103,36 @@ class _CustomInputState extends State<CustomInput> {
             filled: true,
             fillColor: widget.enabled ? AppColors.cardBackground : AppColors.disabledColor,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.borderColor),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.borderColor),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.accentBlue, width: 2),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.error),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.error, width: 2),
             ),
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.r),
+              borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: AppColors.borderColor),
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            hintStyle: TextStyle(
+              fontSize: 14,
               color: AppColors.placeholderColor,
             ),
-            errorStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+            errorStyle: TextStyle(
+              fontSize: 12,
               color: AppColors.error,
             ),
           ),

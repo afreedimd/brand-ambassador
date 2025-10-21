@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage>
   void initState() {
     super.initState();
     _setupAnimations();
-    _navigateToNextScreen();
+    _navigateToNextScreen(); // Commented out navigation from launch screen
   }
 
   void _setupAnimations() {
@@ -80,16 +80,16 @@ class _SplashPageState extends State<SplashPage>
                   children: [
                     // App Logo
                     Container(
-                      width: 120.w,
-                      height: 120.w,
+                      width: 24.w,
+                      height: 24.w,
                       decoration: BoxDecoration(
                         gradient: AppColors.primaryGradient,
-                        borderRadius: BorderRadius.circular(24.r),
+                        borderRadius: BorderRadius.circular(12.r),
                         boxShadow: [
                           BoxShadow(
                             color: AppColors.accentBlue.withOpacity(0.3),
-                            blurRadius: 20,
-                            spreadRadius: 5,
+                            blurRadius: 8,
+                            spreadRadius: 1,
                           ),
                         ],
                       ),
@@ -97,7 +97,7 @@ class _SplashPageState extends State<SplashPage>
                         child: Text(
                           '#',
                           style: TextStyle(
-                            fontSize: 48.sp,
+                            fontSize: 32,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryText,
                           ),
@@ -105,34 +105,36 @@ class _SplashPageState extends State<SplashPage>
                       ),
                     ),
                     
-                    SizedBox(height: 32.h),
+                    SizedBox(height: 16.h),
                     
                     // App Name
                     Text(
                       'Brand Ambassador',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                      style: TextStyle(
+                        fontSize: 32,
                         color: AppColors.primaryText,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 4.h),
                     
                     // Tagline
                     Text(
                       'Manage, Market, Measure, Monetize & Mint',
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      style: TextStyle(
+                        fontSize: 24,
                         color: AppColors.secondaryText,
                       ),
                       textAlign: TextAlign.center,
                     ),
                     
-                    SizedBox(height: 48.h),
+                    SizedBox(height: 24.h),
                     
                     // Loading Indicator
                     const LoadingWidget(
                       message: 'Initializing...',
-                      size: 24,
+                      size: 12,
                     ),
                   ],
                 ),

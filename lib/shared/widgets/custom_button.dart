@@ -73,7 +73,7 @@ class CustomButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           icon!,
-          SizedBox(width: 8.w),
+          SizedBox(width: 8),
           Text(text!),
         ],
       );
@@ -148,65 +148,65 @@ class CustomButton extends StatelessWidget {
   double _getHeight() {
     switch (size) {
       case ButtonSize.small:
-        return 32.h;
+        return 32;
       case ButtonSize.medium:
-        return 40.h;
+        return 40;
       case ButtonSize.large:
-        return 48.h;
+        return 48;
       case ButtonSize.icon:
-        return 40.h;
+        return 40;
     }
   }
 
   double _getIconSize() {
     switch (size) {
       case ButtonSize.small:
-        return 16.w;
+        return 16;
       case ButtonSize.medium:
-        return 20.w;
+        return 20;
       case ButtonSize.large:
-        return 24.w;
+        return 24;
       case ButtonSize.icon:
-        return 20.w;
+        return 20;
     }
   }
 
   EdgeInsets _getPadding() {
     switch (size) {
       case ButtonSize.small:
-        return EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h);
+        return EdgeInsets.symmetric(horizontal: 12, vertical: 6);
       case ButtonSize.medium:
-        return EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h);
+        return EdgeInsets.symmetric(horizontal: 16, vertical: 8);
       case ButtonSize.large:
-        return EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h);
+        return EdgeInsets.symmetric(horizontal: 24, vertical: 12);
       case ButtonSize.icon:
-        return EdgeInsets.all(8.w);
+        return EdgeInsets.all(8);
     }
   }
 
   double _getBorderRadius() {
     switch (size) {
       case ButtonSize.small:
-        return 6.r;
+        return 6;
       case ButtonSize.medium:
-        return 8.r;
+        return 8;
       case ButtonSize.large:
-        return 10.r;
+        return 10;
       case ButtonSize.icon:
-        return 8.r;
+        return 8;
     }
   }
 
   TextStyle _getTextStyle() {
     switch (size) {
       case ButtonSize.small:
-        return TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w600);
+        return TextStyle(fontSize: 12, fontWeight: FontWeight.w600);
       case ButtonSize.medium:
-        return TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600);
+        return TextStyle(fontSize: 14, fontWeight: FontWeight.w600);
       case ButtonSize.large:
-        return TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600);
+        return TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
       case ButtonSize.icon:
-        return TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600);
+        return TextStyle(fontSize: 14, fontWeight: FontWeight.w600);
     }
   }
 }
